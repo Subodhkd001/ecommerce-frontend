@@ -2,7 +2,8 @@ import { useState } from "react";
 import { FaSearch, FaShoppingBag, FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const user = { _id: "asdas", role: "admin" };
+
+const user = { _id: "aeasds", role: "" };
 const Header = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 

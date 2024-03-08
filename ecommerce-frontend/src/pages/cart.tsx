@@ -11,9 +11,9 @@ const cartItems = [
     price: 3000,
     quantity: 4,
     stock: 10,
-
   }
 ];
+
 const subtotal = 4000;
 const tax = Math.round(subtotal * 0.18);
 const shippingCharges = 200;

@@ -3,10 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loader from "./components/loader";
 import Header from "./components/header";
+// import Orders from "./pages/orders";
+// import OrderDetails from "./pages/order-details";
 
 const Home = lazy(() => import("./pages/home"));
 const Search = lazy(() => import("./pages/search"));
 const Cart = lazy(() => import("./pages/cart"));
+const Shipping = lazy(() => import("./pages/shipping"));
+const Login = lazy(() => import("./pages/login"));
+const Orders = lazy(() => import("./pages/orders"));
+const OrderDetails = lazy(() => import("./pages/order-details"));
+
 
 // Admin Routes Importing
 
@@ -41,13 +48,21 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
 
+          {/* Not logged in route */}
+          <Route path="/login" element={<Login />} />
+          {/* Logged in user routes */}
+          <Route>
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/order/:id" element={<OrderDetails />} />
+          </Route>
 
           {/* Admin Routes */}
 
           <Route
-            // element={
-            //   <ProtectedRoute isAuthenticated={true} adminRoute={true} isAdmin={true} />
-            // }
+          // element={
+          //   <ProtectedRoute isAuthenticated={true} adminRoute={true} isAdmin={true} />
+          // }
           >
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/product" element={<Products />} />
